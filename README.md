@@ -111,7 +111,7 @@ Available functions
 
 License
 -------
-This software is released under the [MIT License](https://github.com/realglobe-Inc/pon-cache/blob/master/LICENSE).
+This software is released under the [Apache-2.0 License](https://github.com/realglobe-Inc/pon-cache/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
