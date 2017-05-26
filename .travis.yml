@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '6'
+before_install:
+ - npm i npm-cli-login -g
+ - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+ - npm who
+install:
+- npm install jsdoc -g
+- npm install
+script:
+- ./ci/build.js
+- ./ci/shim.js
+- ./ci/doc.js
+- ./ci/test.js
+after_success:
+- ./ci/travis/publish.js
+env:
+  secure: "F0mVEy5M69A9Ewm3+M+9Jwj8cJO8BKxLv+am/+HGrBYqxEjgcC4seEXOb6sT7a4r5sVCSJiSknWHhm5fWJJMDfVoP8mNvwYXXda3YAPi5ah8hVVrLXP0DGukLDHWeCp41IKysvZmPCL2Fv1FEXBK4U4xLime575jMzLhvnaSQVztE5suSr3g8dgSuRIguPxBYKCDuLI42bzKr57iRuALbi2jkC4OSPjV3K64XLcmbVT7D2WU0ue8yed8w7Ihew0Z3kjKYU4Kd+odMyC0Qk2oq/1nQzB1MDg9JoMW2J5TkdXZtDE9KC1HWbBwV3kN9D1LpQFnPBgUMR3w/CBfz3zbobnxoaO+mn0Oypzeom0bKe58BO9s7pqMMz5coEGakx9fWVePtGjfu8Nff6yIOX+O56PjFltoWTWbPbdY0Rdq7kF4IucUPDFooAtOql4ksDxMangTSGQxf1rcGHNWJXeu0nFMlafrWBsSgmAmbgCpsxKa9WV8GbkAjEHBAwdpCCIPlBEsqdKjnR1tHfWMFZ1e/FM44kVw/4JPsMlxOTs5Dd5oxD+Qh6DBmGVJc7A0s6WSEVDJmNjNFbZYuxAH02zgY5uwZ70VD2CBO91/ZED5ELzHsKoM9MhIwE+dASpVfZHLeguqXrHCbXHB7Hji8Lh21JGfMedON6D5QficqxYgI9Y="
