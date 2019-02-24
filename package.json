@@ -1,6 +1,6 @@
 {
   "name": "pon-cache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cache utility for pon",
   "main": "lib",
   "scripts": {
